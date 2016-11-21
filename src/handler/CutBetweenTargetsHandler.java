@@ -17,12 +17,14 @@ public class CutBetweenTargetsHandler implements ActionSpecificHandler {
 
     @Override
     public void handleAction(int offset) {
-        //performt he cut
+        //perform the cut
         if(action.getOffsets().size() != 1){
+            System.out.println("no offsets! cant cut.");
             return;
         }
         int firstOffset = action.getOffsets().get(0);
         String text = EditorUtil.performCutWithReturn(firstOffset, offset, action.getEditor());
         action.addEvent(new PerformCutEvent(action, firstOffset, text));
+        action.removeMarkerPanel();
     }
 }

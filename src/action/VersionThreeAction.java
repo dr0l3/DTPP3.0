@@ -30,7 +30,7 @@ import static util.MarkerUtil.sortMarkersAndAssignReplacementText;
 /**
  * Created by runed on 11/12/2016.
  */
-public class VersionThreeAction extends com.intellij.openapi.actionSystem.AnAction {
+public class VersionThreeAction {
     private Stack<PluginEvent> eventStack;
     private List<Marker> markerList;
     private MarkerPanel markerPanel;
@@ -41,7 +41,7 @@ public class VersionThreeAction extends com.intellij.openapi.actionSystem.AnActi
     private int originalOffset;
     private Deque<ActionSpecificHandler> actionSpecificHandlerQueue = new LinkedList<>();
 
-    @Override
+
     public void actionPerformed(AnActionEvent anActionEvent) {
         Project project = anActionEvent.getData(CommonDataKeys.PROJECT);
         editor = anActionEvent.getData(CommonDataKeys.EDITOR);
@@ -55,24 +55,37 @@ public class VersionThreeAction extends com.intellij.openapi.actionSystem.AnActi
         this.offsets = new ArrayList<>();
         editor.getContentComponent().add(this.markerPanel);
         createFreshPopup();
-        System.out.println(this.textPopup.toString());
+        showPopup();
         disposePopup();
         createFreshPopup();
-        System.out.println(this.textPopup.toString());
+        showPopup();
         this.contextPoint = editor.getCaretModel().getOffset();
         this.originalOffset = editor.getCaretModel().getOffset();
         eventStack.push(new ActionStartedPlugin(this));
         System.out.println("Action started");
+        textPopup.focus();
     }
 
     public void createFreshPopup(){
+        System.out.println(this.toString());
         this.textPopup = new TextPopup(this);
         System.out.println("Showing new popup");
+    }
+
+    public void showPopup(){
+        System.out.println("Showing popop");
         this.textPopup.show();
+        System.out.println(this.textPopup.getInternalPopup().getLocationOnScreen().toString());
+    }
+
+    public void focusPopup(){
+        this.textPopup.focus();
     }
 
     public void disposePopup(){
-        this.textPopup.getInternalPopup().cancel();
+        System.out.println("Killing popup");
+        this.textPopup.destroy();
+        this.textPopup = null;
     }
 
     public boolean isSelecting() {
@@ -124,16 +137,15 @@ public class VersionThreeAction extends com.intellij.openapi.actionSystem.AnActi
         System.out.println("Handling select for choice: " + choice);
         Optional<Marker> marker = findMarkerByReplacementText(markerList, choice);
         if(!marker.isPresent()){
+            System.out.println("Marker not present");
             return;
         }
         //find location
         int offset = marker.get().getStartOffset();
-        //optimistically perform move
+        //optimistically perform handler action
         actionSpecificHandlerQueue.peek().handleAction(offset);
         //if not escape then continue
         editor.getContentComponent().addKeyListener(new NonAcceptListener(this));
-        textPopup.getInternalPopup().dispose();
-        editor.getContentComponent().remove(markerPanel);
     }
 
     public void handleSelectFirstOccurence(SearchDirection direction) {
@@ -160,8 +172,10 @@ public class VersionThreeAction extends com.intellij.openapi.actionSystem.AnActi
     }
 
     public void handleEscape() {
-        PluginEvent evt = eventStack.pop();
-        evt.onUndo();
+        if(eventStack.size() > 0) {
+            PluginEvent evt = eventStack.pop();
+            evt.onUndo();
+        }
         System.out.println("Current Event stack");
         eventStack.forEach(System.out::println);
     }
@@ -199,6 +213,12 @@ public class VersionThreeAction extends com.intellij.openapi.actionSystem.AnActi
 
     public void saveOffset(int offset){
         this.offsets.add(offset);
+        System.out.println(this);
+        this.offsets.forEach(System.out::println);
+    }
+
+    public void removeLastOffset(){
+        this.offsets.remove(this.offsets.size()-1);
     }
 
     public int getContextPoint() {
@@ -212,7 +232,7 @@ public class VersionThreeAction extends com.intellij.openapi.actionSystem.AnActi
     public void recreateLastPopup() {
         textPopup = new TextPopup(textPopup, this);
         textPopup.show();
-        textPopup.getTextField().requestFocus();
+        textPopup.focus();
     }
 
     public void recreateMarkerPanel(){
@@ -234,5 +254,13 @@ public class VersionThreeAction extends com.intellij.openapi.actionSystem.AnActi
 
     public void requeueHandler(ActionSpecificHandler handler) {
         this.actionSpecificHandlerQueue.addFirst(handler);
+    }
+
+    public void resetPopup() {
+        this.textPopup.reset();
+    }
+
+    public void removeMarkerPanel() {
+        this.editor.getContentComponent().remove(markerPanel);
     }
 }
