@@ -55,24 +55,30 @@ public class VersionThreeAction extends com.intellij.openapi.actionSystem.AnActi
         this.offsets = new ArrayList<>();
         editor.getContentComponent().add(this.markerPanel);
         createFreshPopup();
-        System.out.println(this.textPopup.toString());
+        showPopup();
         disposePopup();
         createFreshPopup();
-        System.out.println(this.textPopup.toString());
+        showPopup();
         this.contextPoint = editor.getCaretModel().getOffset();
         this.originalOffset = editor.getCaretModel().getOffset();
         eventStack.push(new ActionStartedPlugin(this));
         System.out.println("Action started");
+        textPopup.focus();
     }
 
     public void createFreshPopup(){
         this.textPopup = new TextPopup(this);
         System.out.println("Showing new popup");
+    }
+
+    public void showPopup(){
         this.textPopup.show();
     }
 
     public void disposePopup(){
-        this.textPopup.getInternalPopup().cancel();
+        System.out.println("Killing popup");
+        this.textPopup.dispose();
+        this.textPopup = null;
     }
 
     public boolean isSelecting() {
@@ -132,7 +138,7 @@ public class VersionThreeAction extends com.intellij.openapi.actionSystem.AnActi
         actionSpecificHandlerQueue.peek().handleAction(offset);
         //if not escape then continue
         editor.getContentComponent().addKeyListener(new NonAcceptListener(this));
-        textPopup.getInternalPopup().dispose();
+        textPopup.dispose();
         editor.getContentComponent().remove(markerPanel);
     }
 
@@ -160,8 +166,10 @@ public class VersionThreeAction extends com.intellij.openapi.actionSystem.AnActi
     }
 
     public void handleEscape() {
-        PluginEvent evt = eventStack.pop();
-        evt.onUndo();
+        if(eventStack.size() > 0) {
+            PluginEvent evt = eventStack.pop();
+            evt.onUndo();
+        }
         System.out.println("Current Event stack");
         eventStack.forEach(System.out::println);
     }
@@ -212,7 +220,7 @@ public class VersionThreeAction extends com.intellij.openapi.actionSystem.AnActi
     public void recreateLastPopup() {
         textPopup = new TextPopup(textPopup, this);
         textPopup.show();
-        textPopup.getTextField().requestFocus();
+        textPopup.focus();
     }
 
     public void recreateMarkerPanel(){

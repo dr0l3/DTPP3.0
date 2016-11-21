@@ -47,13 +47,6 @@ public class TextPopup {
                 .setFocusable(true)
                 .setMovable(false)
                 .setShowBorder(true)
-                .setCancelCallback(new Computable<Boolean>() {
-                    @Override
-                    public Boolean compute() {
-                        System.out.println(this.toString());
-                        return null;
-                    }
-                })
                 .createPopup();
     }
 
@@ -91,12 +84,25 @@ public class TextPopup {
     public void show(){
         RelativePoint popupLocation = JBPopupFactory.getInstance().guessBestPopupLocation(action.getEditor().getComponent());
         internalPopup.show(popupLocation);
-        textField.grabFocus();
+    }
+
+    public void focus(){
+        this.textField.grabFocus();
     }
 
     public void destroy(){
-        this.getInternalPopup().cancel();
-        this.getInternalPopup().dispose();
+        internalPopup.cancel();
+        internalPopup.dispose();
+    }
+
+    public void dispose(){
+        internalPopup.dispose();
+        internalPopup.cancel();
+    }
+
+    public void cancel(){
+        internalPopup.cancel();
+
     }
 
     public JBPopup getInternalPopup() {

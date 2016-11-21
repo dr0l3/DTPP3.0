@@ -18,5 +18,6 @@ public class SaveOffsetAndCreateBlankOverlayHandler implements ActionSpecificHan
         action.saveOffset(offset);
         action.disposePopup();
         action.createFreshPopup();
+        action.showPopup();
     }
 }
