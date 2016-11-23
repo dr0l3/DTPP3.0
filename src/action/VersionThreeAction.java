@@ -73,7 +73,6 @@ public class VersionThreeAction {
     }
 
     public void showPopup(){
-        System.out.println("Showing popop");
         this.textPopup.show();
         System.out.println(this.textPopup.getInternalPopup().getLocationOnScreen().toString());
     }
@@ -146,6 +145,7 @@ public class VersionThreeAction {
         actionSpecificHandlerQueue.peek().handleAction(offset);
         //if not escape then continue
         editor.getContentComponent().addKeyListener(new NonAcceptListener(this));
+        editor.getContentComponent().remove(markerPanel);
     }
 
     public void handleSelectFirstOccurence(SearchDirection direction) {

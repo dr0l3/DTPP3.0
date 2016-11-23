@@ -2,20 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7caca23c-f9d8-4aa6-a7d0-44d7e3d48ab0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/DTPP3.0/popup/TextPopup$1.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DTPP3.0/action/VersionThreeAction.class" afterPath="$PROJECT_DIR$/out/production/DTPP3.0/action/VersionThreeAction.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DTPP3.0/handler/CutBetweenTargetsHandler.class" afterPath="$PROJECT_DIR$/out/production/DTPP3.0/handler/CutBetweenTargetsHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DTPP3.0/handler/JumpHandler.class" afterPath="$PROJECT_DIR$/out/production/DTPP3.0/handler/JumpHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DTPP3.0/handler/SaveOffsetAndCreateBlankOverlayHandler.class" afterPath="$PROJECT_DIR$/out/production/DTPP3.0/handler/SaveOffsetAndCreateBlankOverlayHandler.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DTPP3.0/marker/MarkerPanel.class" afterPath="$PROJECT_DIR$/out/production/DTPP3.0/marker/MarkerPanel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DTPP3.0/popup/TextPopup.class" afterPath="$PROJECT_DIR$/out/production/DTPP3.0/popup/TextPopup.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DTPP3.0/util/EditorUtil.class" afterPath="$PROJECT_DIR$/out/production/DTPP3.0/util/EditorUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/DTPP3.0/util/MarkerUtil.class" afterPath="$PROJECT_DIR$/out/production/DTPP3.0/util/MarkerUtil.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/action/VersionThreeAction.java" afterPath="$PROJECT_DIR$/src/action/VersionThreeAction.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/handler/CutBetweenTargetsHandler.java" afterPath="$PROJECT_DIR$/src/handler/CutBetweenTargetsHandler.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/handler/JumpHandler.java" afterPath="$PROJECT_DIR$/src/handler/JumpHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/handler/SaveOffsetAndCreateBlankOverlayHandler.java" afterPath="$PROJECT_DIR$/src/handler/SaveOffsetAndCreateBlankOverlayHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/popup/TextPopup.java" afterPath="$PROJECT_DIR$/src/popup/TextPopup.java" />
     </list>
@@ -39,15 +27,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="VersionThreeAction.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="VersionThreeAction.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/action/VersionThreeAction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
-              <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
+            <state relative-caret-position="256">
+              <caret line="146" column="63" selection-start-line="146" selection-start-column="63" selection-end-line="146" selection-end-column="63" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#7819#7820#0" expanded="true" />
-                <element signature="e#7877#7878#0" expanded="true" />
+                <element signature="e#2669#2670#0" expanded="true" />
+                <element signature="e#2707#2708#0" expanded="true" />
+                <element signature="e#7832#7833#0" expanded="true" />
+                <element signature="e#7890#7891#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -102,8 +92,8 @@
       <file leaf-file-name="SaveOffsetAndCreateBlankOverlayHandler.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/handler/SaveOffsetAndCreateBlankOverlayHandler.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="21" column="30" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="30" />
+            <state relative-caret-position="391">
+              <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -111,15 +101,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SaveOffsetAndCreateBlankOverlayEvent.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SaveOffsetAndCreateBlankOverlayEvent.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/event/SaveOffsetAndCreateBlankOverlayEvent.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+            <state relative-caret-position="374">
+              <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
               <folding>
                 <element signature="e#285#286#0" expanded="true" />
                 <element signature="e#321#322#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="544">
+              <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -137,13 +137,10 @@
       <file leaf-file-name="TextPopup.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/popup/TextPopup.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="833">
-              <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
+            <state relative-caret-position="360">
+              <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
               <folding>
-                <element signature="e#3667#3668#0" expanded="false" />
-                <element signature="e#3703#3704#0" expanded="false" />
-                <element signature="e#3743#3744#0" expanded="false" />
-                <element signature="e#3775#3776#0" expanded="false" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -194,13 +191,13 @@
         <option value="$PROJECT_DIR$/resources/META-INF/plugin.xml" />
         <option value="$PROJECT_DIR$/src/event/PerformJumpEvent.java" />
         <option value="$PROJECT_DIR$/src/util/ListenerUtil.java" />
-        <option value="$PROJECT_DIR$/src/popup/TextPopup.java" />
         <option value="$PROJECT_DIR$/src/handler/JumpHandler.java" />
         <option value="$PROJECT_DIR$/src/listener/NonAcceptListener.java" />
-        <option value="$PROJECT_DIR$/src/action/VersionThreeAction.java" />
-        <option value="$PROJECT_DIR$/src/handler/SaveOffsetAndCreateBlankOverlayHandler.java" />
         <option value="$PROJECT_DIR$/src/event/SaveOffsetAndCreateBlankOverlayEvent.java" />
         <option value="$PROJECT_DIR$/src/handler/CutBetweenTargetsHandler.java" />
+        <option value="$PROJECT_DIR$/src/popup/TextPopup.java" />
+        <option value="$PROJECT_DIR$/src/handler/SaveOffsetAndCreateBlankOverlayHandler.java" />
+        <option value="$PROJECT_DIR$/src/action/VersionThreeAction.java" />
       </list>
     </option>
   </component>
@@ -1067,12 +1064,12 @@
       <workItem from="1478972019889" duration="8831000" />
       <workItem from="1479036080399" duration="16098000" />
       <workItem from="1479721754820" duration="13428000" />
-      <workItem from="1479912177112" duration="1880000" />
+      <workItem from="1479912177112" duration="2076000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40749000" />
+    <option name="totallyTimeSpent" value="40945000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1128,15 +1125,9 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/action/VersionThreeAction.java</url>
-          <line>75</line>
+          <line>83</line>
           <properties />
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/action/VersionThreeAction.java</url>
-          <line>77</line>
-          <properties />
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
       <option name="time" value="10" />
@@ -1148,18 +1139,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/marker/MarkerPanel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="39" column="41" selection-start-line="39" selection-start-column="41" selection-end-line="39" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#535#536#0" expanded="false" />
-            <element signature="e#579#580#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/marker/Marker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1210,10 +1189,7 @@
         <state relative-caret-position="493">
           <caret line="37" column="58" selection-start-line="37" selection-start-column="58" selection-end-line="37" selection-end-column="58" />
           <folding>
-            <element signature="e#3667#3668#0" expanded="false" />
-            <element signature="e#3703#3704#0" expanded="false" />
-            <element signature="e#3743#3744#0" expanded="false" />
-            <element signature="e#3775#3776#0" expanded="false" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1233,8 +1209,10 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#7819#7820#0" expanded="true" />
-            <element signature="e#7877#7878#0" expanded="true" />
+            <element signature="e#2669#2670#0" expanded="true" />
+            <element signature="e#2707#2708#0" expanded="true" />
+            <element signature="e#7832#7833#0" expanded="true" />
+            <element signature="e#7890#7891#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1473,19 +1451,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/popup/TextPopup.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
-          <folding>
-            <element signature="e#3667#3668#0" expanded="false" />
-            <element signature="e#3703#3704#0" expanded="false" />
-            <element signature="e#3743#3744#0" expanded="false" />
-            <element signature="e#3775#3776#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/listener/NonAcceptListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1501,28 +1466,6 @@
         <state relative-caret-position="1063">
           <caret line="599" column="6" selection-start-line="599" selection-start-column="6" selection-end-line="599" selection-end-column="6" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/action/VersionThreeAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
-          <caret line="218" column="0" selection-start-line="218" selection-start-column="0" selection-end-line="218" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#7819#7820#0" expanded="true" />
-            <element signature="e#7877#7878#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/handler/SaveOffsetAndCreateBlankOverlayHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="21" column="30" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="30" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1552,11 +1495,53 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/event/SaveOffsetAndCreateBlankOverlayEvent.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        <state relative-caret-position="374">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
           <folding>
             <element signature="e#285#286#0" expanded="true" />
             <element signature="e#321#322#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/popup/TextPopup.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/handler/SaveOffsetAndCreateBlankOverlayHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/action/VersionThreeAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="146" column="63" selection-start-line="146" selection-start-column="63" selection-end-line="146" selection-end-column="63" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2669#2670#0" expanded="true" />
+            <element signature="e#2707#2708#0" expanded="true" />
+            <element signature="e#7832#7833#0" expanded="true" />
+            <element signature="e#7890#7891#0" expanded="true" />
           </folding>
         </state>
       </provider>
