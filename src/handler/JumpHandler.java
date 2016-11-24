@@ -20,5 +20,6 @@ public class JumpHandler implements ActionSpecificHandler {
         EditorUtil.performMove(offset, action.getEditor());
         action.addEvent(new PerformJumpEvent(action));
         action.removeMarkerPanel();
+        action.disposePopup();
     }
 }

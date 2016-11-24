@@ -84,7 +84,6 @@ public class VersionThreeAction {
     public void disposePopup(){
         System.out.println("Killing popup");
         this.textPopup.destroy();
-        this.textPopup = null;
     }
 
     public boolean isSelecting() {
@@ -141,11 +140,10 @@ public class VersionThreeAction {
         }
         //find location
         int offset = marker.get().getStartOffset();
-        //optimistically perform handler action
-        actionSpecificHandlerQueue.peek().handleAction(offset);
         //if not escape then continue
         editor.getContentComponent().addKeyListener(new NonAcceptListener(this));
-        editor.getContentComponent().remove(markerPanel);
+        //optimistically perform handler action
+        actionSpecificHandlerQueue.poll().handleAction(offset);
     }
 
     public void handleSelectFirstOccurence(SearchDirection direction) {
@@ -236,6 +234,8 @@ public class VersionThreeAction {
     }
 
     public void recreateMarkerPanel(){
+        String searchText = textPopup.getTextField().getText();
+        updateMarkers(searchText);
         editor.getContentComponent().add(markerPanel);
         markerPanel.repaint();
     }
@@ -262,5 +262,11 @@ public class VersionThreeAction {
 
     public void removeMarkerPanel() {
         this.editor.getContentComponent().remove(markerPanel);
+    }
+
+    public void clearMarkerList(){
+        markerList = new ArrayList<>();
+        markerPanel.setMarkerList(markerList);
+        markerPanel.repaint();
     }
 }

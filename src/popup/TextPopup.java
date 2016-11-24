@@ -92,9 +92,6 @@ public class TextPopup {
     public void destroy(){
         internalPopup.cancel();
         internalPopup.dispose();
-        this.panel.remove(textField);
-        this.textField = null;
-        this.panel = null;
     }
 
     public void dispose(){

@@ -26,5 +26,6 @@ public class CutBetweenTargetsHandler implements ActionSpecificHandler {
         String text = EditorUtil.performCutWithReturn(firstOffset, offset, action.getEditor());
         action.addEvent(new PerformCutEvent(action, firstOffset, text));
         action.removeMarkerPanel();
+        action.disposePopup();
     }
 }

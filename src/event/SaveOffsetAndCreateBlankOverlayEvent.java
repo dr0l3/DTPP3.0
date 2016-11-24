@@ -17,6 +17,7 @@ public class SaveOffsetAndCreateBlankOverlayEvent implements PluginEvent {
         action.removeLastOffset();
         action.recreateMarkerPanel();
         action.disposePopup();
+        // TODO: 24/11/2016 Text should be passed to popup here
         action.recreateLastPopup();
     }
 }

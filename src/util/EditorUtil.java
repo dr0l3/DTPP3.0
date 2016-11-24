@@ -117,7 +117,7 @@ public class EditorUtil {
 
     public static String performCutWithReturn(int startOffset, int endOffset, Editor editor){
         performCopy(startOffset, endOffset, editor);
-        String text = editor.getSelectionModel().getSelectedText();
+        String text = extractCopiedStringFromClipboard();
         performDelete(startOffset,endOffset,editor);
         return text;
     }
