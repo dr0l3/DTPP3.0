@@ -7,10 +7,9 @@ import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.editor.ScrollType;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.TextRange;
-import event.ActionStartedPlugin;
+import event.ActionStartedEvent;
 import event.PluginEvent;
 import event.SetSelectingEvent;
-import handler.JumpHandler;
 import listener.NonAcceptListener;
 import marker.Marker;
 import marker.MarkerComparator;
@@ -19,7 +18,6 @@ import popup.TextPopup;
 import util.EditorUtil;
 
 import java.util.*;
-import java.util.concurrent.LinkedBlockingQueue;
 
 import static util.EditorUtil.getMatchesForStringInTextRange;
 import static util.EditorUtil.getVisibleTextRange;
@@ -61,7 +59,7 @@ public class VersionThreeAction {
         showPopup();
         this.contextPoint = editor.getCaretModel().getOffset();
         this.originalOffset = editor.getCaretModel().getOffset();
-        eventStack.push(new ActionStartedPlugin(this));
+        eventStack.push(new ActionStartedEvent(this));
         System.out.println("Action started");
         textPopup.focus();
     }
@@ -227,8 +225,9 @@ public class VersionThreeAction {
         return originalOffset;
     }
 
-    public void recreateLastPopup() {
+    public void recreateLastPopup(String text) {
         textPopup = new TextPopup(textPopup, this);
+        textPopup.setText(text);
         textPopup.show();
         textPopup.focus();
     }
@@ -268,5 +267,9 @@ public class VersionThreeAction {
         markerList = new ArrayList<>();
         markerPanel.setMarkerList(markerList);
         markerPanel.repaint();
+    }
+
+    public String getPopupText() {
+        return textPopup.getTextField().getText();
     }
 }

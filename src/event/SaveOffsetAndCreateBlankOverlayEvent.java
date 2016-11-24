@@ -7,9 +7,11 @@ import action.VersionThreeAction;
  */
 public class SaveOffsetAndCreateBlankOverlayEvent implements PluginEvent {
     private VersionThreeAction action;
+    private String popupTextBeforeSelect;
 
-    public SaveOffsetAndCreateBlankOverlayEvent(VersionThreeAction action) {
+    public SaveOffsetAndCreateBlankOverlayEvent(VersionThreeAction action, String popupTextBeforeSelect) {
         this.action = action;
+        this.popupTextBeforeSelect = popupTextBeforeSelect;
     }
 
     @Override
@@ -17,7 +19,6 @@ public class SaveOffsetAndCreateBlankOverlayEvent implements PluginEvent {
         action.removeLastOffset();
         action.recreateMarkerPanel();
         action.disposePopup();
-        // TODO: 24/11/2016 Text should be passed to popup here
-        action.recreateLastPopup();
+        action.recreateLastPopup(popupTextBeforeSelect);
     }
 }

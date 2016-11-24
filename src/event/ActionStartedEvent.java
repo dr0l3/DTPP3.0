@@ -5,10 +5,10 @@ import action.VersionThreeAction;
 /**
  * Created by runed on 11/12/2016.
  */
-public class ActionStartedPlugin implements PluginEvent {
+public class ActionStartedEvent implements PluginEvent {
     private VersionThreeAction versionThreeAction;
 
-    public ActionStartedPlugin(VersionThreeAction versionThreeAction) {
+    public ActionStartedEvent(VersionThreeAction versionThreeAction) {
         this.versionThreeAction = versionThreeAction;
     }
 

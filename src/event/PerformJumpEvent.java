@@ -9,9 +9,11 @@ import util.EditorUtil;
  */
 public class PerformJumpEvent implements PluginEvent {
     private VersionThreeAction action;
+    private String popupText;
 
-    public PerformJumpEvent(VersionThreeAction action) {
+    public PerformJumpEvent(VersionThreeAction action, String popupText) {
         this.action = action;
+        this.popupText = popupText;
     }
 
     @Override
@@ -19,6 +21,6 @@ public class PerformJumpEvent implements PluginEvent {
         EditorUtil.performMove(action.getOriginalOffset(), action.getEditor());
         action.requeueHandler(new JumpHandler(action));
         action.recreateMarkerPanel();
-        action.recreateLastPopup();
+        action.recreateLastPopup(popupText);
     }
 }

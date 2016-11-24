@@ -9,11 +9,13 @@ import util.EditorUtil;
  */
 public class PerformCutEvent implements PluginEvent {
     private VersionThreeAction action;
+    private String popupText;
     private int firstOffset;
     private String removedText;
 
-    public PerformCutEvent(VersionThreeAction action, int firstOffset, String removedText) {
+    public PerformCutEvent(VersionThreeAction action, String popupText, int firstOffset, String removedText) {
         this.action = action;
+        this.popupText = popupText;
         this.firstOffset = firstOffset;
         this.removedText = removedText;
     }
@@ -23,6 +25,6 @@ public class PerformCutEvent implements PluginEvent {
         EditorUtil.performPaste(firstOffset, action.getEditor(), removedText);
         action.requeueHandler(new CutBetweenTargetsHandler(action));
         action.recreateMarkerPanel();
-        action.recreateLastPopup();
+        action.recreateLastPopup(popupText);
     }
 }

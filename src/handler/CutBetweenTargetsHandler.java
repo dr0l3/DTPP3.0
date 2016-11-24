@@ -23,8 +23,16 @@ public class CutBetweenTargetsHandler implements ActionSpecificHandler {
             return;
         }
         int firstOffset = action.getOffsets().get(0);
-        String text = EditorUtil.performCutWithReturn(firstOffset, offset, action.getEditor());
-        action.addEvent(new PerformCutEvent(action, firstOffset, text));
+        String text;
+        String popupText = action.getPopupText();
+        if(firstOffset > offset){
+            text = EditorUtil.performCutWithReturn(offset, firstOffset, action.getEditor());
+            action.addEvent(new PerformCutEvent(action, popupText ,offset, text));
+        } else {
+            text = EditorUtil.performCutWithReturn(firstOffset, offset, action.getEditor());
+            action.addEvent(new PerformCutEvent(action, popupText ,firstOffset, text));
+        }
+
         action.removeMarkerPanel();
         action.disposePopup();
     }

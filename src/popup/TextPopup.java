@@ -116,4 +116,8 @@ public class TextPopup {
         this.textField.setEditable(true);
         this.textField.setText("");
     }
+
+    public void setText(String text){
+        textField.setText(text);
+    }
 }
